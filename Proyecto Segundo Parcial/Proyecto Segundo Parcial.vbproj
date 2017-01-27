@@ -68,7 +68,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="winCandidato.xaml.vb">
+      <DependentUpon>winCandidato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winVotante.xaml.vb">
+      <DependentUpon>winVotante.xaml</DependentUpon>
+    </Compile>
+    <Page Include="winAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winCandidato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winLogin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -76,10 +90,17 @@
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.vb">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="winAdmin.xaml.vb">
+      <DependentUpon>winAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winLogin.xaml.vb">
+      <DependentUpon>winLogin.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="winVotante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Import Include="System.Threading.Tasks" />
@@ -131,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="2016-02-11-171746.211233logo-cne1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
