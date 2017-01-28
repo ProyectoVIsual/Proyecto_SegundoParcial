@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="winCandidato" Height="300" Width="300">
     <Grid>
-        
+        <Button x:Name="btnResul" Content="Resultados" HorizontalAlignment="Left" Height="35" Margin="68,42,0,0" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="btnListar" Content="Listar Resultados" HorizontalAlignment="Left" Height="35" Margin="68,97,0,0" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="btnCerrarC" Content="Cerrar Sesión" HorizontalAlignment="Left" Height="35" Margin="68,152,0,0" VerticalAlignment="Top" Width="154"/>
+
     </Grid>
 </Window>

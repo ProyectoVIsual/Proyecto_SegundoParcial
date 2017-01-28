@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="winVotante" Height="300" Width="300">
     <Grid>
-        
+        <Button x:Name="btnSufragar" Content="Sufragar" HorizontalAlignment="Left" Margin="69,51,0,0" VerticalAlignment="Top" Width="154" Height="37"/>
+        <Button x:Name="btnCerrarV" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="69,124,0,0" VerticalAlignment="Top" Width="154" Height="37"/>
+
     </Grid>
 </Window>

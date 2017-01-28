@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="winAdmin" Height="300" Width="300">
     <Grid>
-        
+        <Button x:Name="btnagregar" Content="Agregar Candidato" HorizontalAlignment="Left" Margin="66,23,0,0" VerticalAlignment="Top" Width="154" Height="37"/>
+        <Button x:Name="btnEliminar" Content="Eliminar Candidato" HorizontalAlignment="Left" Height="37" Margin="66,65,0,0" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="btnVerR" Content="Ver Resultados" HorizontalAlignment="Left" Height="37" Margin="66,107,0,0" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="btnVerC" Content="Ver Candidatos" HorizontalAlignment="Left" Height="37" Margin="66,149,0,0" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="btnCerrarA" Content="Cerrar Sesión" HorizontalAlignment="Left" Height="37" Margin="66,191,0,0" VerticalAlignment="Top" Width="154"/>
+
     </Grid>
 </Window>

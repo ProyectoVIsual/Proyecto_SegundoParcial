@@ -24,12 +24,16 @@
             </TabItem>
             <TabItem Header="Candidato" Foreground="Blue">
                 <Grid Background="WhiteSmoke">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="63*"/>
+                        <ColumnDefinition Width="104*"/>
+                    </Grid.ColumnDefinitions>
                     <Label x:Name="lblUserC" Content="Usuario:" HorizontalAlignment="Left" Margin="112,16,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtUserC" HorizontalAlignment="Left" Height="26" Margin="186,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
-                    <Button x:Name="btnLogC" Content="Ingresar" HorizontalAlignment="Center" Height="34" Margin="170,109,177,0" VerticalAlignment="Top" Width="154"/>
+                    <TextBox x:Name="txtUserC" HorizontalAlignment="Left" Height="26" Margin="186,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnLogC" Content="Ingresar" HorizontalAlignment="Center" Height="34" Margin="170,109,177,0" VerticalAlignment="Top" Width="154" Grid.ColumnSpan="2"/>
                     <Label x:Name="lblPassC" Content="Contraseña:" HorizontalAlignment="Left" Margin="112,66,0,0" VerticalAlignment="Top"/>
                     <PasswordBox x:Name="txtPassC" HorizontalAlignment="Left" Height="26" Margin="186,66,0,0" VerticalAlignment="Top" Width="192
-                                 "/>
+                                 " Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Administrador" Foreground="Red">

@@ -49,6 +49,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,6 +69,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Administrador.vb" />
+    <Compile Include="Candidato.vb" />
+    <Compile Include="InicioSession.vb" />
+    <Compile Include="MySql\Data.vb" />
+    <Compile Include="Persona.vb" />
+    <Compile Include="Votante.vb" />
     <Compile Include="winCandidato.xaml.vb">
       <DependentUpon>winCandidato.xaml</DependentUpon>
     </Compile>
