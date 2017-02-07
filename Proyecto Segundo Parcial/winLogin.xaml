@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Segundo_Parcial"
         mc:Ignorable="d"
-        Title="Votaciones 2017" Height="498" Width="600" Icon="2016-02-11-171746.211233logo-cne1.jpg" ShowInTaskbar="False">
+        Title="Votaciones 2017" Height="498" Width="600" Icon="2016-02-11-171746.211233logo-cne1.jpg" ShowInTaskbar="False" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="220*"/>
@@ -16,14 +16,20 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Center" VerticalAlignment="Center" Height="185
                     " Margin="48,19,33,12" Grid.Row="1" Width="511">
             <TabItem Header="Votante" Foreground="YellowGreen">
-                <Grid Background="WhiteSmoke">
+                <Grid Background="White">
                     <Label x:Name="lblVotante" Content="Ingrese su número de Cédula:" HorizontalAlignment="Left" Margin="31,35,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtVotante" HorizontalAlignment="Left" Height="26" Margin="218,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
                     <Button x:Name="btnVotante" Content="Ingresar" HorizontalAlignment="Center" Height="34" Margin="169,81,178,0" VerticalAlignment="Top" Width="154"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Candidato" Foreground="Blue">
-                <Grid Background="WhiteSmoke">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFDEDEDE" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="63*"/>
                         <ColumnDefinition Width="104*"/>
@@ -37,13 +43,17 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Administrador" Foreground="Red">
-                <Grid Background="WhiteSmoke">
-                    <Label x:Name="lblUserA" Content="Usuario:" HorizontalAlignment="Left" Margin="112,16,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtUserA" HorizontalAlignment="Left" Height="26" Margin="186,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
-                    <Button x:Name="btnLogA" Content="Ingresar" HorizontalAlignment="Center" Height="34" Margin="170,109,177,0" VerticalAlignment="Top" Width="154"/>
-                    <Label x:Name="lblPassA" Content="Contraseña:" HorizontalAlignment="Left" Margin="112,66,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtPassA" HorizontalAlignment="Left" Height="26" Margin="186,66,0,0" VerticalAlignment="Top" Width="192
-                                 "/>
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="92*"/>
+                        <ColumnDefinition Width="413*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblUserA" Content="Usuario:" HorizontalAlignment="Left" Margin="20,16,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txtUserA" HorizontalAlignment="Left" Height="26" Margin="94,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192" Grid.Column="1"/>
+                    <Button x:Name="btnLogA" Content="Ingresar" HorizontalAlignment="Center" Height="34" Margin="80,109,179,0" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                    <Label x:Name="lblPassA" Content="Contraseña:" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <PasswordBox x:Name="txtPassA" HorizontalAlignment="Left" Height="26" Margin="94,66,0,0" VerticalAlignment="Top" Width="192
+                                 " Grid.Column="1"/>
                 </Grid>
             </TabItem>
         </TabControl>

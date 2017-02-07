@@ -7,7 +7,11 @@
 
         votante = txtVotante.Text
         If SESSION.InicioSessionvOTANTE(votante) = "EXITO" Then
+
+            wVotante.Owner = Me
             wVotante.Show()
+            Me.Hide()
+
         Else
             MsgBox("Incoreccto")
         End If
@@ -29,7 +33,7 @@
     End Sub
 
     Private Sub btnLogA_Click(sender As Object, e As RoutedEventArgs) Handles btnLogA.Click
-        Dim wAdmin As New winAdmin
+        Dim Hija As New winAdmin
         Dim user As String
         Dim pass As PasswordBox = txtPassA
 
@@ -37,9 +41,16 @@
         Dim pass1 As String = pass.Password
 
         If SESSION.InicioSessionAdmin(user, pass1) = "EXITO" Then
-            wAdmin.Show()
+            Hija.Owner = Me
+            Hija.Show()
+            Me.Hide()
         Else
             MsgBox("Incoreccto")
         End If
+    End Sub
+
+    Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
+        Dim txt As TextBox = txtVotante
+        txt.Text = ""
     End Sub
 End Class

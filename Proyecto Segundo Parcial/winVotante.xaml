@@ -5,10 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Segundo_Parcial"
         mc:Ignorable="d"
-        Title="winVotante" Height="300" Width="300">
-    <Grid>
-        <Button x:Name="btnSufragar" Content="Sufragar" HorizontalAlignment="Left" Margin="69,51,0,0" VerticalAlignment="Top" Width="154" Height="37"/>
-        <Button x:Name="btnCerrarV" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="69,124,0,0" VerticalAlignment="Top" Width="154" Height="37"/>
+        Title="winVotante" Height="300" Width="429" Closing="Window_Closing">
+    <Grid Background="White">
+        <Button x:Name="btnSufragar" Content="Sufragar" HorizontalAlignment="Left" Margin="149,236,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
+        <Button x:Name="btnCerrarV" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="312,18,0,0" VerticalAlignment="Top" Width="99" Height="26" Background="White" BorderBrush="White" Foreground="#FFC11D1D" FontWeight="Bold"/>
+        <Label x:Name="lbl_votante_nombre" Content="Bienvenido Votante" HorizontalAlignment="Left" Margin="19,18,0,0" VerticalAlignment="Top" Width="119" FontWeight="Bold" Background="White" Foreground="#FF5D96CF"/>
+        <TabControl x:Name="tabControl_V" HorizontalAlignment="Left" Height="164" Margin="19,49,0,0" VerticalAlignment="Top" Width="392">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-1,0"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-1,0"/>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
