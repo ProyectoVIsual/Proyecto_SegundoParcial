@@ -21,7 +21,7 @@ Public Class winAdmin
 
         CB_Dignidades.Items.Add("Presidente")
         CB_Dignidades.Items.Add("Parlamento Andino")
-        CB_Dignidades.Items.Add("Asanbleista")
+        CB_Dignidades.Items.Add("Asambleista")
         llenarCand()
 
 
@@ -204,6 +204,10 @@ Public Class winAdmin
 
 
         End Using
+    End Sub
+
+    Private Sub CB_Dignidades_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles CB_Dignidades.SelectionChanged
+
     End Sub
 End Class
 
