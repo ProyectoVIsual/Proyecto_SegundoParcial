@@ -27,7 +27,7 @@
                     <TextBox x:Name="txt_edadAdminagg" HorizontalAlignment="Left" Height="20" Margin="153,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
                     <Label x:Name="label_Copy4" Content="Edad" HorizontalAlignment="Left" Margin="55,106,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="94" Height="22" FontSize="11"/>
                     <TextBox x:Name="txt_ListaAdminagg" HorizontalAlignment="Left" Height="22" Margin="387,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="label_Copy5" Content="Lista" HorizontalAlignment="Left" Margin="289,75,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="23" FontSize="11"/>
+                    <Label x:Name="label_Copy5" Content="Lista #" HorizontalAlignment="Left" Margin="289,75,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="23" FontSize="11"/>
 
                 </Grid>
             </TabItem>

@@ -10,6 +10,7 @@ Public Class winAdmin
     Private Presi As DataSet
     Private Parl As DataSet
     Private conPresi As DataSet
+    Dim id As Integer
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
         Dim ventananPadre As winLogin
@@ -36,7 +37,7 @@ Public Class winAdmin
         Dim user As String = txt_UsuarioAdminagg.Text
         Dim apellido As String = txt_ApellidoAdminagg.Text
         Dim dignidad As String = CB_Dignidades.SelectionBoxItem
-        Dim lista As Integer = txt_ListaAdminagg.Text
+        Dim lista As Integer = CInt(txt_ListaAdminagg.Text)
         Dim edad As String = txt_edadAdminagg.Text
 
 
@@ -89,20 +90,14 @@ Public Class winAdmin
             Dim consulta As String = "SELECT * FROM candidato WHERE nombre!= 'blanco' and nombre!= 'nulo'"
             conex.Open()
             da = New MySqlDataAdapter(consulta, conex)
-
-
-
             dc.Clear()
             da.Fill(ds, "candidato")
 
 
             Dim nombre As String
-            Dim id As Integer
-
-
 
             For Each cand As DataRow In ds.Tables("candidato").Rows
-                nombre = cand("nombre") & " " & cand("apellido")
+                nombre = cand("nombre")
                 id = cand("id")
                 cmbCandid.Items.Add(nombre)
             Next
@@ -189,7 +184,7 @@ Public Class winAdmin
 
     Private Sub btnListPa_Click(sender As Object, e As RoutedEventArgs) Handles btnListPa.Click
         Using conex
-            Console.WriteLine("Conexion exitosa")
+            'Console.WriteLine("Conexion exitosa")
             Dim consulta As String = "SELECT  * FROM candidato WHERE dignidad LIKE '%andino%' "
             conex.Open()
             da = New MySqlDataAdapter(consulta, conex)
@@ -207,6 +202,29 @@ Public Class winAdmin
     End Sub
 
     Private Sub CB_Dignidades_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles CB_Dignidades.SelectionChanged
+
+    End Sub
+
+    Private Sub btnElimc_Click(sender As Object, e As RoutedEventArgs) Handles btnElimc.Click
+        Using conex
+            Console.WriteLine("Conexion exitosa")
+            Dim consulta As String = "DELETE   FROM candidato WHERE nombre ='" & cmbCandid.SelectedItem & "'"
+
+            conex.Open()
+            da = New MySqlDataAdapter(consulta, conex)
+            'conPresi = New DataSet("candidato")
+            MsgBox("EXITO " & cmbCandid.SelectedItem)
+            'da.Fill(conPresi, "candidato")
+
+            'dglistar.DataContext = conPresi
+
+
+
+
+        End Using
+
+
+
 
     End Sub
 End Class

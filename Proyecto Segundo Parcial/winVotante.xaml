@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="winVotante" Height="450" Width="550" Closing="Window_Closing" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid Background="White">
-        <Button x:Name="btnSufragar" Content="Sufragar" HorizontalAlignment="Left" Margin="212,387,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
         <Button x:Name="btnCerrarV" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="420,18,0,0" VerticalAlignment="Top" Width="99" Height="26" Background="White" BorderBrush="White" Foreground="#FFC11D1D" FontWeight="Bold"/>
         <Label x:Name="lbl_votante_nombre" Content="Bienvenido Votante" HorizontalAlignment="Left" Margin="19,18,0,0" VerticalAlignment="Top" Width="127" FontWeight="Bold" Background="White" Foreground="#FF5D96CF"/>
         <TabControl x:Name="tabControl_V" HorizontalAlignment="Left" Height="325" Margin="19,49,0,0" VerticalAlignment="Top" Width="500">
@@ -16,6 +15,7 @@
                     <Image x:Name="image" HorizontalAlignment="Left" Height="127" Margin="342,87,0,0" VerticalAlignment="Top" Width="95" Source="HUELLA.png"/>
                     <Label x:Name="label" Content="Escoja el candidato por el que desea votar:" HorizontalAlignment="Left" Margin="39,121,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <ComboBox x:Name="cbPresis" HorizontalAlignment="Left" Height="35" Margin="78,164,0,0" VerticalAlignment="Top" Width="165"/>
+                    <Button x:Name="btnSufragar_P" Content="Sufragar" HorizontalAlignment="Left" Margin="191,260,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Parlamento Andino">
@@ -24,14 +24,20 @@
                     <ComboBox x:Name="cbParl" HorizontalAlignment="Left" Height="35" Margin="78,164,0,0" VerticalAlignment="Top" Width="165"/>
 
                     <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="127" Margin="376,156,0,0" VerticalAlignment="Top" Width="95" Source="HUELLA.png"/>
+                    <Button x:Name="btnSufragar_PA" Content="Sufragar" HorizontalAlignment="Left" Margin="191,260,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Asambleistas">
                 <Grid Background="White" Margin="0,0,-1,0">
-                    <Label x:Name="label2" Content="Escoja el candidato por el que desea votar:" HorizontalAlignment="Left" Margin="39,121,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <ComboBox x:Name="cbAsam" HorizontalAlignment="Left" Height="35" Margin="78,164,0,0" VerticalAlignment="Top" Width="165"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="73*"/>
+                        <ColumnDefinition Width="173*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="label2" Content="Escoja el candidato por el que desea votar:" HorizontalAlignment="Left" Margin="39,121,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cbAsam" HorizontalAlignment="Left" Height="35" Margin="78,164,0,0" VerticalAlignment="Top" Width="165" Grid.ColumnSpan="2"/>
 
-                    <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="127" Margin="376,156,0,0" VerticalAlignment="Top" Width="95" Source="HUELLA.png"/>
+                    <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="127" Margin="230.5,156,0,0" VerticalAlignment="Top" Width="95" Source="HUELLA.png" Grid.Column="1"/>
+                    <Button x:Name="btnSufragar" Content="Sufragar" HorizontalAlignment="Left" Margin="45.5,260,0,0" VerticalAlignment="Top" Width="98" Height="23" Grid.Column="1"/>
                 </Grid>
             </TabItem>
         </TabControl>

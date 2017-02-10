@@ -19,6 +19,17 @@
             _passwordCandidato = value
         End Set
     End Property
+
+    Private _id As String
+    Public Property Id() As String
+        Get
+            Return _id
+        End Get
+        Set(ByVal value As String)
+            _id = value
+        End Set
+    End Property
+
     Private _dignidad As String
     Public Property Dignidad() As String
         Get
@@ -59,7 +70,12 @@
         Me._partido = "Desconocido"
         Me._votos = 0
     End Sub
+    Sub New(ByVal nombre As String, ByVal apellido As String, ByVal id As String)
+        Me.Nombre = nombre
+        Me.Apellido = apellido
+        Me.Id = id
 
+    End Sub
     Sub New(ByVal nombre As String, ByVal apellido As String, ByVal cedula As String, ByVal edadPersona As Byte, ByVal user As String, ByVal pass As String, ByVal dig As String, ByVal part As String)
         Me.Nombre = nombre
         Me.Apellido = apellido

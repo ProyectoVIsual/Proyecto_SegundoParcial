@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Segundo_Parcial"
         mc:Ignorable="d"
-        Title="ReporteGeneral" Height="300" Width="648.718">
+        Title="ReporteGeneral" Height="300" Width="648.718" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="216" Margin="10,10,-335,0" VerticalAlignment="Top" Width="617" AutoGenerateColumns="False" ItemsSource="{Binding candidato}" EnableRowVirtualization="False" >
             <DataGrid.Columns>

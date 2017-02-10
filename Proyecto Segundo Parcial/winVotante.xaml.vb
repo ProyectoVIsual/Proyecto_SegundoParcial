@@ -3,6 +3,7 @@ Imports System.Data
 Public Class winVotante
 
     Dim op As Op_Administrador = New Op_Administrador
+    Dim listaparlamento As New ArrayList
 
     Dim conex As New MySqlConnection("data source=localhost; user id=root; password=''; database=voto2016")
     Dim da As MySqlDataAdapter
@@ -41,7 +42,7 @@ Public Class winVotante
 
 
             For Each candi As DataRow In ds.Tables("candidato").Rows
-                nombre = candi("nombre") & " " & candi("apellido")
+                nombre = candi("nombre")
                 id = candi("id")
                 cbPresis.Items.Add(nombre)
             Next
@@ -71,8 +72,10 @@ Public Class winVotante
 
 
             For Each candi As DataRow In ds.Tables("candidato").Rows
-                nombre = candi("nombre") & " " & candi("apellido")
+                nombre = candi("nombre")
                 id = candi("id")
+                Dim candida As New Candidato(candi("nombre"), candi("apellido"), candi("id"))
+                listaparlamento.Add(candida)
                 cbParl.Items.Add(nombre)
 
             Next
@@ -96,7 +99,7 @@ Public Class winVotante
 
 
             For Each candi As DataRow In ds.Tables("candidato").Rows
-                nombre = candi("nombre") & " " & candi("apellido")
+                nombre = candi("nombre")
                 id = candi("id")
                 cbAsam.Items.Add(nombre)
 
@@ -106,18 +109,31 @@ Public Class winVotante
     End Sub
 
     Private Sub btnSufragar_Click(sender As Object, e As RoutedEventArgs) Handles btnSufragar.Click
-        Dim idpres As String = cbPresis.SelectedItem.ToString
-        Dim idpar As String = cbParl.SelectedItem.ToString
+
         Dim idasa As String = cbAsam.SelectedItem.ToString
         Using conex
-            Dim consulta As String = "SELECT id FROM candidato WHERE nombre   ='""' "
+            Dim consulta As String = "SELECT id , Votos FROM candidato WHERE nombre   ='" & cbAsam.SelectedItem.ToString & "'"
             conex.Open()
             da = New MySqlDataAdapter(consulta, conex)
 
             ds.Clear()
             da.Fill(ds, "candidato")
-
+            If (ds.Tables("candidato").Rows.Count() <> 0) Then
+                Dim voto As Integer = ds.Tables("candidato").Rows(0).Item("Votos")
+                conex.Close()
+                voto = voto + 1
+                Dim sqlUPDATE As String = "UPDATE candidato SET Votos= " & voto & " WHERE nombre='" & cbAsam.SelectedItem.ToString & "'"
+                conex.Open()
+                Dim Comand As MySqlCommand = New MySqlCommand(sqlUPDATE, conex)
+                Comand.ExecuteNonQuery()
+                MsgBox("EXITO VOTO PARA EL CANDIDATO: " & cbAsam.SelectedItem.ToString)
+            Else
+                MsgBox("NO hay candidato" & cbAsam.SelectedItem.ToString)
+            End If
         End Using
+
+
+
         ' Using conexion As New OleDbConnection(strConexion)
         ' Dim consulta As String = "Select * FROM lista;"
         ' Dim adapter As New OleDbDataAdapter(New OleDbCommand(consulta, conexion))
@@ -138,5 +154,53 @@ Public Class winVotante
         Dim ventananPadre As winLogin
         ventananPadre = Me.Owner
         ventananPadre.Show()
+    End Sub
+
+    Private Sub btnSufragar_PA_Click(sender As Object, e As RoutedEventArgs) Handles btnSufragar_PA.Click
+        Dim idasa As String = cbParl.SelectedItem.ToString
+        Using conex
+            Dim consulta As String = "SELECT id , Votos FROM candidato WHERE nombre   ='" & cbParl.SelectedItem.ToString & "'"
+            conex.Open()
+            da = New MySqlDataAdapter(consulta, conex)
+
+            ds.Clear()
+            da.Fill(ds, "candidato")
+            If (ds.Tables("candidato").Rows.Count() <> 0) Then
+                Dim voto As Integer = ds.Tables("candidato").Rows(0).Item("Votos")
+                conex.Close()
+                voto = voto + 1
+                Dim sqlUPDATE As String = "UPDATE candidato SET Votos= " & voto & " WHERE nombre='" & cbParl.SelectedItem.ToString & "'"
+                conex.Open()
+                Dim Comand As MySqlCommand = New MySqlCommand(sqlUPDATE, conex)
+                Comand.ExecuteNonQuery()
+                MsgBox("EXITO VOTO PARA EL CANDIDATO: " & cbParl.SelectedItem.ToString)
+            Else
+                MsgBox("NO hay candidato" & cbParl.SelectedItem.ToString)
+            End If
+        End Using
+    End Sub
+
+    Private Sub btnSufragar_P_Click(sender As Object, e As RoutedEventArgs) Handles btnSufragar_P.Click
+        Dim idasa As String = cbPresis.SelectedItem.ToString
+        Using conex
+            Dim consulta As String = "SELECT id , Votos FROM candidato WHERE nombre   ='" & cbPresis.SelectedItem.ToString & "'"
+            conex.Open()
+            da = New MySqlDataAdapter(consulta, conex)
+
+            ds.Clear()
+            da.Fill(ds, "candidato")
+            If (ds.Tables("candidato").Rows.Count() <> 0) Then
+                Dim voto As Integer = ds.Tables("candidato").Rows(0).Item("Votos")
+                conex.Close()
+                voto = voto + 1
+                Dim sqlUPDATE As String = "UPDATE candidato SET Votos= " & voto & " WHERE nombre='" & cbPresis.SelectedItem.ToString & "'"
+                conex.Open()
+                Dim Comand As MySqlCommand = New MySqlCommand(sqlUPDATE, conex)
+                Comand.ExecuteNonQuery()
+                MsgBox("EXITO VOTO PARA EL CANDIDATO: " & cbPresis.SelectedItem.ToString)
+            Else
+                MsgBox("NO hay candidato" & cbPresis.SelectedItem.ToString)
+            End If
+        End Using
     End Sub
 End Class
