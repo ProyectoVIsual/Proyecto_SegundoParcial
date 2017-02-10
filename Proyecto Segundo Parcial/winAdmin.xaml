@@ -5,33 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Proyecto_Segundo_Parcial"
         mc:Ignorable="d"
-        Title="winAdmin" Height="300" Width="589.5" Loaded="Window_Loaded">
+        Title="winAdmin" Height="400" Width="589.5" Loaded="Window_Loaded" Closing="Window_Closing_1">
     <Grid>
         <Button x:Name="btnCerrarA" Content="Cerrar Sesión" HorizontalAlignment="Left" Height="30" Margin="478,10,0,0" VerticalAlignment="Top" Width="94" Background="White" BorderBrush="White" FontWeight="Bold" Foreground="#FF741414"/>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="214" Margin="10,45,0,0" VerticalAlignment="Top" Width="562" FontWeight="Bold" Foreground="#FF383838" Background="#FFCDCDCD">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="315" Margin="10,45,0,0" VerticalAlignment="Top" Width="562" FontWeight="Bold" Foreground="#FF383838" Background="#FFCDCDCD">
             <TabItem Header="Agregar usuario" Background="Gainsboro" Foreground="#FF404040">
                 <Grid Background="White">
-                    <Button x:Name="btnagregar" Content="Agregar Candidato" Margin="213,148,218,10" BorderBrush="{x:Null}" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Foreground="White"/>
-                    <TextBox x:Name="txt_NombreAdminagg" HorizontalAlignment="Left" Height="17" Margin="156,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="lbl_NombreAdminagg" Content="Nombre:" HorizontalAlignment="Left" Margin="58,14,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="55" Height="22" FontSize="11"/>
-                    <TextBox x:Name="txt_ApellidoAdminagg" HorizontalAlignment="Left" Height="18" Margin="156,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="label_Copy" Content="Apellido:" HorizontalAlignment="Left" Margin="58,41,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="55" Height="22" FontSize="11"/>
-                    <TextBox x:Name="txt_CedulaAdminagg" HorizontalAlignment="Left" Height="17" Margin="156,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="label_Copy1" Content="Numero de cedula:" HorizontalAlignment="Left" Margin="58,68,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="94" Height="22" FontSize="11"/>
-                    <TextBox x:Name="txt_UsuarioAdminagg" HorizontalAlignment="Left" Height="17" Margin="390,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="lbl_NombreAdminagg_Copy" Content="Usuario:" HorizontalAlignment="Left" Margin="292,14,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="55" Height="22" FontSize="11"/>
-                    <TextBox x:Name="txt_ContrasenaAdminagg" HorizontalAlignment="Left" Height="18" Margin="390,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="label_Copy2" Content="Contraseña:" HorizontalAlignment="Left" Margin="292,38,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="23" FontSize="11"/>
-                    <ComboBox x:Name="CB_Dignidades" HorizontalAlignment="Left" Margin="390,93,0,0" VerticalAlignment="Top" Width="104" Height="19"/>
-                    <Label x:Name="label_Copy3" Content="Dignidad:" HorizontalAlignment="Left" Margin="292,95,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="22" FontSize="11"/>
-                    <TextBox x:Name="txt_edadAdminagg" HorizontalAlignment="Left" Height="17" Margin="156,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="label_Copy4" Content="Edad" HorizontalAlignment="Left" Margin="58,95,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="94" Height="22" FontSize="11"/>
-                    <TextBox x:Name="txt_ListaAdminagg" HorizontalAlignment="Left" Height="18" Margin="390,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
-                    <Label x:Name="label_Copy5" Content="Lista" HorizontalAlignment="Left" Margin="292,64,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="23" FontSize="11"/>
+                    <Button x:Name="btnagregar" Content="Agregar Candidato" Margin="213,161,218,25" BorderBrush="{x:Null}" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Foreground="White"/>
+                    <TextBox x:Name="txt_NombreAdminagg" HorizontalAlignment="Left" Height="17" Margin="153,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="lbl_NombreAdminagg" Content="Nombre:" HorizontalAlignment="Left" Margin="55,25,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="55" Height="22" FontSize="11"/>
+                    <TextBox x:Name="txt_ApellidoAdminagg" HorizontalAlignment="Left" Height="18" Margin="153,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="label_Copy" Content="Apellido:" HorizontalAlignment="Left" Margin="55,52,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="55" Height="22" FontSize="11"/>
+                    <TextBox x:Name="txt_CedulaAdminagg" HorizontalAlignment="Left" Height="17" Margin="153,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="label_Copy1" Content="Numero de cedula:" HorizontalAlignment="Left" Margin="55,79,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="94" Height="22" FontSize="11"/>
+                    <TextBox x:Name="txt_UsuarioAdminagg" HorizontalAlignment="Left" Height="17" Margin="387,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="lbl_NombreAdminagg_Copy" Content="Usuario:" HorizontalAlignment="Left" Margin="289,25,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="55" Height="22" FontSize="11"/>
+                    <TextBox x:Name="txt_ContrasenaAdminagg" HorizontalAlignment="Left" Height="18" Margin="387,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="label_Copy2" Content="Contraseña:" HorizontalAlignment="Left" Margin="289,49,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="23" FontSize="11"/>
+                    <ComboBox x:Name="CB_Dignidades" HorizontalAlignment="Left" Margin="387,104,0,0" VerticalAlignment="Top" Width="104" Height="19"/>
+                    <Label x:Name="label_Copy3" Content="Dignidad:" HorizontalAlignment="Left" Margin="289,106,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="22" FontSize="11"/>
+                    <TextBox x:Name="txt_edadAdminagg" HorizontalAlignment="Left" Height="17" Margin="153,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="label_Copy4" Content="Edad" HorizontalAlignment="Left" Margin="55,106,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="94" Height="22" FontSize="11"/>
+                    <TextBox x:Name="txt_ListaAdminagg" HorizontalAlignment="Left" Height="18" Margin="387,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontWeight="Normal"/>
+                    <Label x:Name="label_Copy5" Content="Lista" HorizontalAlignment="Left" Margin="289,75,0,0" VerticalAlignment="Top" FontWeight="Normal" Width="64" Height="23" FontSize="11"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Foreground="#FF404040">
+            <TabItem Header="Ver Resultados" Foreground="#FF404040">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -39,10 +39,25 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="White">
-                    <Button x:Name="btnVerC" Content="Ver Candidatos" Margin="176,104,274,24"/>
+
+                    <Expander x:Name="expander" Header="Presidentes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Height="283">
+                        <Grid Background="#FFE5E5E5" Width="547" Height="251" Margin="2,0,1,0">
+                            <DataGrid Name="dgPres" Margin="0,0,327,0"  ItemsSource="{Binding Path= candidato}" />
+                        </Grid>
+                    </Expander>
+                    <Expander x:Name="exAsam" Header="Asambleistas" HorizontalAlignment="Left" Width="192" Margin="174,0,0,0">
+                        <Grid Background="#FFE5E5E5">
+                            <DataGrid Name="dgAsam" ItemsSource="{Binding Path= candidatos}"/>
+                        </Grid>
+                    </Expander>
+                    <Expander x:Name="exParan" Header="Parlamento Andino" HorizontalAlignment="Left" Width="169" Margin="371,0,0,0">
+                        <Grid Background="#FFE5E5E5">
+                            <DataGrid Name="dgParan" Margin="0,0,10,0" ItemsSource="{Binding Path= candidatos}"/>
+                        </Grid>
+                    </Expander>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Foreground="#FF404040">
+            <TabItem Header="Listar Candidatos" Foreground="#FF404040">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -50,11 +65,42 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="White">
-                    <Button x:Name="btnVerR" Content="Ver Resultados" Margin="227,109,223,19"/>
+                    <DataGrid x:Name="dglistar" HorizontalAlignment="Left" Height="227" VerticalAlignment="Top" Width="552" ItemsSource="{Binding Path= candidato}"/>
+                    <Button x:Name="btnListP" Content="Listar Presidentes" HorizontalAlignment="Left" Height="32" Margin="48,241,0,0" VerticalAlignment="Top" Width="115">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFF1F76F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnListA" Content="Listar Asambleistas" HorizontalAlignment="Left" Height="32" Margin="209,241,0,0" VerticalAlignment="Top" Width="134">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF5068FD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnListPa" Content="Listar P.A." HorizontalAlignment="Left" Height="32" Margin="398,241,0,0" VerticalAlignment="Top" Width="98">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFDE4128" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
 
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Foreground="#FF404040">
+            <TabItem Header="Eliminar Candidato" Foreground="#FF404040">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -62,7 +108,19 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="White">
-                    <Button x:Name="btnEliminar" Content="Eliminar Candidato" Margin="327,105,114,23"/>
+                    <Label x:Name="label" Content="Elija el nombre del candidato que desea eliminar" HorizontalAlignment="Left" Margin="18,40,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cmbCandid" HorizontalAlignment="Left" Height="26" Margin="325,40,0,0" VerticalAlignment="Top" Width="186"/>
+                    <Button x:Name="btnElimc" Content="Eliminar Candidato" HorizontalAlignment="Left" Height="48" Margin="58,209,0,0" VerticalAlignment="Top" Width="150" BorderBrush="#FF9E9E9E">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FFA0A7EC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
 
 
                 </Grid>

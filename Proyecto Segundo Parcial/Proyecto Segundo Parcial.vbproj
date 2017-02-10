@@ -164,5 +164,8 @@
   <ItemGroup>
     <Resource Include="2016-02-11-171746.211233logo-cne1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HUELLA.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

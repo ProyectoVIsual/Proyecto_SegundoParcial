@@ -52,5 +52,12 @@
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         Dim txt As TextBox = txtVotante
         txt.Text = ""
+        txtPassA.Clear()
+        txtPassC.Clear()
+        txtUserA.Clear()
+        txtUserC.Clear()
+        txtVotante.Clear()
+
+
     End Sub
 End Class

@@ -118,21 +118,111 @@ Public Class Op_Administrador
         Return neensaje
 
     End Function
-    Public Sub MenuParaVotante()
+    Public Sub MenuParaVotantePres()
         Try
+
             sw = False
-            sql = "SELECT * FROM candidato"
+            sql = "SELECT id, nombre, apellido FROM candidato WHERE dignidad ='presidente' "
             conex.Open()
-
-
             da = New MySqlDataAdapter(sql, conex)
+
             ds.Clear()
             da.Fill(ds, "candidato")
-            'Console.WriteLine("123. Regresar al Menú Principal", CInt(OpVotante.Out))
-            'Console.WriteLine("                                ")
-            'Console.WriteLine("     TODOS LOS CANDIDATOS INSCRITOS            ")
+
+            'Hasta aqui arroja un DATA SET
+
+
+            'aqui haras una lista de tipo candidato
+
+            'Dim preslist As New List(Of Candidato)
+
+
+            'ahora añade los datos del DATA SET A la lista
+            'For index = 0 To ds.Tables("candidato").Rows.Count()
+            ' Dim pres As New Candidato(ds.Tables("candidato").Rows(index).Item("id"), ds.Tables("candidato").Rows(index).Item("nombre"), ds.Tables("candidato").Rows(index).Item("apellido"))
+            'preslist.Add(pres)
+            'Next
+            'no se esta ejecutando ese es el problema 
+
+
+
+
+
+
+        Catch ex As Exception
+            'Console.WriteLine("ERROR EXCRPTION CONEXCION")
+            neensaje = "ERROR"
+        End Try
+        conex.Close()
+
+    End Sub
+
+    Public Sub MenuParaVotanteAsam()
+        Try
+            'Dim gbr As New GroupBox
+            'gbr.Name ='grpPres'
+            sw = False
+            sql = "SELECT * FROM candidato WHERE dignidad ='Asambleista' "
+            conex.Open()
+            Dim yAxis As Integer
+            yAxis = 10
+
+            da = New MySqlDataAdapter(sql, conex)
+
+            ds.Clear()
+            da.Fill(ds, "candidato")
+
 
             For index = 0 To ds.Tables("candidato").Rows.Count()
+                Dim dynRadio As New RadioButton()
+                ' gbr.Add()
+                With dynRadio
+
+                    .Name = CStr(ds.Tables("candidato").Rows(index).Item("id"))
+                    .Margin = New Thickness(10, yAxis, 0, 0)
+                    .Content = CStr(ds.Tables("candidato").Rows(index).Item("nombre") & " " & ds.Tables("candidato").Rows(index).Item("apellido"))
+                    .Width = 80
+                End With
+
+                yAxis = yAxis + 40
+                'Console.WriteLine("ID: " & ds.Tables("candidato").Rows(index).Item("id") & " " & ds.Tables("candidato").Rows(index).Item("nombre") & " " & ds.Tables("candidato").Rows(index).Item("apellido") & " | DIGNIDAD: " & ds.Tables("candidato").Rows(index).Item("dignidad") & ":", index + 1)
+            Next
+
+
+        Catch ex As Exception
+            'Console.WriteLine("ERROR EXCRPTION CONEXCION")
+            neensaje = "ERROR"
+        End Try
+        conex.Close()
+    End Sub
+    Public Sub MenuParaVotanteParAn()
+        Try
+            'Dim gbr As New GroupBox
+            'gbr.Name ='grpPres'
+            sw = False
+            sql = "SELECT * FROM candidato WHERE dignidad LIKE '%andino%' "
+            conex.Open()
+            Dim yAxis As Integer
+            yAxis = 10
+
+            da = New MySqlDataAdapter(sql, conex)
+
+            ds.Clear()
+            da.Fill(ds, "candidato")
+
+
+            For index = 0 To ds.Tables("candidato").Rows.Count()
+                Dim dynRadio As New RadioButton()
+                ' gbr.Add()
+                With dynRadio
+
+                    .Name = CStr(ds.Tables("candidato").Rows(index).Item("id"))
+                    .Margin = New Thickness(10, yAxis, 0, 0)
+                    .Content = CStr(ds.Tables("candidato").Rows(index).Item("nombre") & " " & ds.Tables("candidato").Rows(index).Item("apellido"))
+                    .Width = 80
+                End With
+
+                yAxis = yAxis + 40
                 'Console.WriteLine("ID: " & ds.Tables("candidato").Rows(index).Item("id") & " " & ds.Tables("candidato").Rows(index).Item("nombre") & " " & ds.Tables("candidato").Rows(index).Item("apellido") & " | DIGNIDAD: " & ds.Tables("candidato").Rows(index).Item("dignidad") & ":", index + 1)
             Next
 
@@ -157,8 +247,7 @@ Public Class Op_Administrador
             If (ds.Tables("candidato").Rows.Count() <> 0) Then
                 sw = True
 
-                'Console.WriteLine("" & id & " " & ds.Tables("candidato").Rows(0).Item("Votos"))
-                'Console.WriteLine("" & ds.Tables("candidato").Rows(0).Item("nombre"))
+
 
                 voto = ds.Tables("candidato").Rows(0).Item("Votos")
                 conex.Close()
@@ -184,4 +273,3 @@ Public Class Op_Administrador
     End Function
 
 End Class
-
