@@ -82,8 +82,8 @@ INSERT INTO `candidato` (`id`, `nombre`, `user`, `pass`, `lista`, `Votos`, `cedu
 (10, 'Pubenza', 'pubfuen3', 'pubfuen3', '3', 0, 1325356894, 50, 'Parlamento Andino', 'Fuentes'),
 (11, 'Roxana ', 'roxpig6', 'roxpig6', '6', 0, 1356195362, 29, 'Parlamento Andino', 'Piguave '),
 (12, 'Wilson ', 'wilsa7', 'wilsa7', '7', 0, 254356456, 48, 'Parlamento Andino', 'Sanchez'),
-(13, 'nulo', 'vnulo0', 'vnulo0', '0', 0, 0, 0, 'presidente', ' '),
-(14, 'blanco', 'vblanc0', 'vblanc0', '0', 0, 0, 0, 'presidente', ' '),
+(13, 'nulo', 'vnulo0', 'vnulo0', '0', 0, 0, 10, 'presidente', 'P'),
+(14, 'blanco', 'vblanc0', 'vblanc0', '0', 0, 0, 0, 'presidente', 'P'),
 (15, 'Viviana', 'vivibo35', 'vivibo35', '35', 0, 995632359, 30, 'Asambleista', 'Bonilla'),
 (16, 'MOISES', 'moitac6', 'moitac6', '6', 0, 653456823, 48, 'Asambleista', 'TACLE'),
 (17, 'PAOLA', 'paovin6', 'paovin6', '6', 0, 956234586, 27, 'Asambleista', 'VINTIMILLA'),
@@ -92,10 +92,10 @@ INSERT INTO `candidato` (`id`, `nombre`, `user`, `pass`, `lista`, `Votos`, `cedu
 (20, 'María José', 'majoce5', 'majoce5', '5', 0, 633526405, 28, 'Asambleista', 'Cedeno '),
 (21, 'Alex ', 'alalma5', 'alalma5', '5', 0, 56348689, 36, 'Asambleista', 'Almache'),
 (22, 'Priscilla', 'prisna17', 'prisna17', '17', 0, 953456850, 31, 'Asambleista', 'Naranjo'),
-(23, 'blanco', 'vpablanc0', 'vpablanc0', '0', 0, 1, 0, 'Parlamento Andino', ' '),
-(24, 'nulo', 'nulpa0', 'nulpa0', '0', 0, 1, 0, 'Parlamento Andino', ' '),
-(25, 'nulo', 'nulas0', 'nulas0', '0', 0, 2, 0, 'Asambleista', '  '),
-(26, 'blanco', 'blasn0', 'blasn0', '0', 0, 2, 0, 'Asambleista', ' ');
+(23, 'blanco', 'vpablanc0', 'vpablanc0', '0', 0, 11, 0, 'Parlamento Andino', 'PA'),
+(24, 'nulo', 'nulpa0', 'nulpa0', '0', 0, 1, 0, 'Parlamento Andino', 'PA'),
+(25, 'nulo', 'nulas0', 'nulas0', '0', 0, 12, 0, 'Asambleista', 'A'),
+(26, 'blanco', 'blasn0', 'blasn0', '0', 0, 2, 0, 'Asambleista', 'A');
 
 -- --------------------------------------------------------
 
