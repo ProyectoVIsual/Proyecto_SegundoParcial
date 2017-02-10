@@ -7,15 +7,22 @@
         mc:Ignorable="d"
         Title="ReporteGeneral" Height="300" Width="648.718" ResizeMode="NoResize">
     <Grid>
-        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="216" Margin="10,10,-335,0" VerticalAlignment="Top" Width="617" AutoGenerateColumns="False" ItemsSource="{Binding candidato}" EnableRowVirtualization="False" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding nombre}" Header="Nombre"/>
-                <DataGridTextColumn Binding="{Binding apellido}" Header="Apellido"/>
-                <DataGridTextColumn Binding="{Binding lista}" Header="Lista"/>
-                <DataGridTextColumn Binding="{Binding Votos}" Header="Votos"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="btnCerrarReporteG" Content="Cerrar" HorizontalAlignment="Left" Height="27" Margin="489,233,-335,0" VerticalAlignment="Top" Width="138"/>
+        <Button x:Name="btnCerrarReporteG" Content="Cerrar" HorizontalAlignment="Left" Height="27" Margin="545,230,0,0" VerticalAlignment="Top" Width="92"/>
+        <Expander x:Name="exAsam" Header="Asambleistas" HorizontalAlignment="Left" Width="192" Margin="174,0,0,-11">
+            <Grid Background="#FFE5E5E5">
+                <DataGrid x:Name="dgAsam" ItemsSource="{Binding candidatos}"/>
+            </Grid>
+        </Expander>
+        <Expander x:Name="exParan" Header="Parlamento Andino" HorizontalAlignment="Left" Width="169" Margin="361,0,0,-11">
+            <Grid Background="#FFE5E5E5">
+                <DataGrid x:Name="dgParan" Margin="0,0,10,0" ItemsSource="{Binding candidatos}"/>
+            </Grid>
+        </Expander>
+        <Expander x:Name="expander" Header="Presidentes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Height="283" Margin="0,0,0,-11">
+            <Grid Background="#FFE5E5E5" Width="547" Height="251" Margin="2,0,1,0">
+                <DataGrid x:Name="dgPres" Margin="0,0,327,0"  ItemsSource="{Binding candidato}" />
+            </Grid>
+        </Expander>
 
     </Grid>
 </Window>
